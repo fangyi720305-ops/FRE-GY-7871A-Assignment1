@@ -1,0 +1,6 @@
+,Sample construction step,Removed at step,Remaining
+1,Unique securities in frozen ARK holdings,0,124
+2,Exclude foreign securities/private issuers,23,101
+3,Exclude private or nonperiodic companies,6,95
+4,Exclude fund positions,2,93
+5,Consolidate Alphabet dual share classes,1,92

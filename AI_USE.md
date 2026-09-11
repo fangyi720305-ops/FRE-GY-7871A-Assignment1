@@ -1,20 +1,10 @@
+
 # AI use disclosure
 
-Required by the syllabus. One paragraph is enough. Undisclosed use is an
-integrity violation; disclosed use costs you nothing.
+**Tools used:** OpenAI ChatGPT and Codex.
 
-Replace everything below.
+**What I used them for:** I used AI to help organize the analysis notebook, draft Python code for dictionary scoring, quarterly aggregation, market-variable construction, regressions, tables, and figures, and debug errors involving two-way clustered standard errors and pandas merges. I also used it to help interpret the statistical results and edit the report for clarity and concision.
 
----
+**What I wrote myself:** I ran the four starter scripts, executed and reviewed every notebook cell, checked intermediate sample counts and outputs, made the final methodological choices, and verified that the reported tables, figure, and conclusions matched the executed results. I also reviewed and adapted all AI-assisted code before including it in the submission.
 
-**Tools used:**
-
-**What I used them for:**
-(e.g. "Claude for debugging the two-way clustered standard errors, and for a first
-draft of the quintile plotting code, which I then rewrote to sort within quarter.")
-
-**What I wrote myself:**
-
-**Anything the model got wrong that I had to correct:**
-(This one is worth writing honestly. It is often the most interesting thing in the
-file, and it tells me you were reading the output rather than pasting it.)
+**Anything the model got wrong that I had to correct:** An initial two-way clustering implementation passed string/object cluster labels to `statsmodels`, causing a NumPy data-type error; I corrected it by converting both clustering variables to integer codes. An initial merge incorrectly used `one_to_one` as the merge method instead of as the validation rule. I also identified and corrected implausible market-cap controls caused by XBRL share-count units and stock-split timing before running the final regressions.

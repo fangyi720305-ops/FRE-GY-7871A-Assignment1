@@ -1,0 +1,4 @@
+,Filing-level sample step,Removed at step,Remaining
+1,Downloaded filing records for domestic securities,0,1702
+2,Remove duplicate Alphabet share-class filings,20,1682
+3,Remove missing or empty parsed texts,0,1682
