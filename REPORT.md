@@ -74,13 +74,11 @@ where $c_{d,w}$ is the count of word $w$ and $N_d$ is the total number of tokens
 I implemented the Loughran–McDonald tf-idf score as
 
 ```math
-\text{TFIDF}_{d,L}
+\mathrm{TFIDF}_{d,L}
 =
-\sum_{w\in L}
-\frac{[1+\ln(c_{d,w})]\ln(D/df_w)}
-     {1+\ln(N_d)}
-\mathbf{1}(c_{d,w}>0).
-\tag{1}
+\sum_{\substack{w\in L \\ c_{d,w}>0}}
+\frac{(1+\ln c_{d,w})\ln(D/df_w)}
+     {1+\ln N_d}
 ```
 
 Here, $D=1{,}682$ is the number of filings and $df_w$ is the number of filings containing word $w$. I interpreted term frequency as the log-transformed within-filing count, inverse document frequency as $\ln(D/df_w)$, and the denominator as a log document-length adjustment. Document frequencies and weights were calculated using the same 1,682-filing corpus used in the analysis.
