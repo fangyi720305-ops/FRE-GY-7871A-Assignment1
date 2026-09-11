@@ -61,29 +61,29 @@ The overlap means the two measures are not mechanically independent: an occurren
 
 ## 4. Method
 
-For filing \(d\), the proportional score for dictionary \(L\) is
+For filing $d$, the proportional score for dictionary $L$ is
 
-$$
+```math
 \text{Proportion}_{d,L}
 =
 \frac{\sum_{w\in L} c_{d,w}}{N_d},
-$$
+```
 
-where \(c_{d,w}\) is the count of word \(w\) and \(N_d\) is the total number of tokens in filing \(d\).
+where $c_{d,w}$ is the count of word $w$ and $N_d$ is the total number of tokens in filing $d$.
 
 I implemented the Loughran–McDonald tf-idf score as
 
-$$
+```math
 \text{TFIDF}_{d,L}
 =
 \sum_{w\in L}
 \frac{[1+\ln(c_{d,w})]\ln(D/df_w)}
      {1+\ln(N_d)}
-\mathbf{1}(c_{d,w}>0),
+\mathbf{1}(c_{d,w}>0).
 \tag{1}
-$$
+```
 
-where \(D=1{,}682\) is the number of filings and \(df_w\) is the number of filings containing word \(w\). I interpreted term frequency as the log-transformed within-filing count, inverse document frequency as \(\ln(D/df_w)\), and the denominator as a log document-length adjustment. Document frequencies and weights were calculated using the same 1,682-filing corpus used in the analysis.
+Here, $D=1{,}682$ is the number of filings and $df_w$ is the number of filings containing word $w$. I interpreted term frequency as the log-transformed within-filing count, inverse document frequency as $\ln(D/df_w)$, and the denominator as a log document-length adjustment. Document frequencies and weights were calculated using the same 1,682-filing corpus used in the analysis.
 
 For Figure 1 and the aggregate trend tests, I first demeaned every score by its issuer-by-form average and added back the corresponding overall form average. I then averaged the adjusted values within filing quarter, keeping 10-K and 10-Q observations separate. This controls for changes in firm composition and avoids the annual sawtooth caused by the heavier concentration of long 10-K filings in the first quarter.
 
